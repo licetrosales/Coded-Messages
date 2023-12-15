@@ -31,3 +31,16 @@ for character in message_for_v:
         
 print(translated_message_for_v)
 
+# Encoding function
+def caesar_decode(message, offset):
+  decoded_message = ""
+
+  for character in message:
+    if character in alphabet:
+      character_value = alphabet.find(character)
+      decoded_message += alphabet[(character_value + offset) % 26]
+    else:
+      decoded_message += character
+
+  return decoded_message
+
