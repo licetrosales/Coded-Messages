@@ -44,3 +44,17 @@ def caesar_decode(message, offset):
 
   return decoded_message
 
+# Decoding function
+def caesar_encode(message, offset):
+  encoded_message = ""
+
+  for character in message:
+    if character in alphabet:
+      character_value = alphabet.find(character)
+      encoded_message += alphabet[(character_value - offset) % 26]
+    else:
+      encoded_message += character
+
+  return encoded_message
+
+
